@@ -1,22 +1,26 @@
 Git=require('node-git-server');
 join=require('path').join;
+fs = require('fs');
+path = require('path');
+
+pattern = /git/;
 
 const port =
   !process.env.PORT || isNaN(process.env.PORT)
     ? 7005
     : parseInt(process.env.PORT);
 
-console.log(join(__dirname, './repos'))
-const repos = new Git(join(__dirname, './repos'), {
+const repopath = join(__dirname, './repos');
+console.log(repopath)
+const repos = new Git(repopath, {
   autoCreate: true,
 });
 
-async function processRepos(push) {
-  // Waits for the full list, then iterates
-  for (const repo of await repos.list()) {
-    push.log(repo.name);
-    // await someAsyncOp(repo); // Sequential async operation
-  }
+function processRepos(push) {
+    folders = fs.readdirSync(repopath, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory() && pattern.test(dirent.name))
+    .map(dirent => dirent.name);
+    push.log(folders);
 }
 
 repos.on('push', async (push) => {
@@ -24,7 +28,7 @@ repos.on('push', async (push) => {
   push.log();
   push.log('Hey!');
   push.log('Checkout these other repos:');
-  await processRepos(push)  
+  processRepos(push)  
   push.log();
   push.accept();
 });
