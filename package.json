@@ -7,7 +7,7 @@
   "main": "index.js",
   "node_version": "18.20.2",
   "dependencies": {
-    "node-git-server":""
+    "node-git-server":"0.6.1"
   },
   "devDependenciesTemp": {
     "gqtest": ">=0.0.17",
