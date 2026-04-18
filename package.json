@@ -1,6 +1,6 @@
 {
   "name": "gqnodegit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A node git server for commiting codes",
   "repository": "git@github.com:goldfiction/gqnodegit.git",
   "private": false,
@@ -16,7 +16,8 @@
   },
   "scripts": {
     "start":"node index.js",
-    "inst":"npm install"
+    "inst":"npm install",
+    "commit":"git push origin master && git push github master && git push bitbucket master && git push nodegit master"
   },
   "author": "glidev5@gmail.com",
   "license": "MIT"
