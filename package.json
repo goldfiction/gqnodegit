@@ -17,7 +17,7 @@
   "scripts": {
     "start":"node index.js",
     "inst":"npm install",
-    "commit":"git push origin master ; git push github master ; git push bitbucket master ; git push nodegit master"
+    "commit":"git push origin master; git push github master; git push bitbucket master; git push nodegit master"
   },
   "author": "glidev5@gmail.com",
   "license": "MIT"
