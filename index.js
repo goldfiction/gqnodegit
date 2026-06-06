@@ -4,7 +4,7 @@ fs = require('fs');
 path = require('path');
 
 pattern = /git/;
-auth = true;
+auth = false;
 
 const port =
   !process.env.PORT || isNaN(process.env.PORT)

@@ -8,3 +8,4 @@ ireport.json
 package-lock.json
 *.private
 repos
+nohup.out
