@@ -1,6 +1,6 @@
 {
-  "name": "gqnodegit",
-  "version": "0.0.2",
+  "name": "@goldfiction/gqnodegit",
+  "version": "0.0.3",
   "description": "A node git server for commiting codes",
   "repository": "git@github.com:goldfiction/gqnodegit.git",
   "private": false,
